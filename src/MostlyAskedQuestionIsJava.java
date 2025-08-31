@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -153,7 +154,10 @@ public class MostlyAskedQuestionIsJava {
         Map<String, Long> wordCount1 = Arrays.stream(s2.split(" "))
                 .map(String::toLowerCase) // for case-insensitive counting
                 .collect(Collectors.groupingBy(word -> word, Collectors.counting()));
-
+        Map<String, Long> wordCount2 = Arrays.stream(s2.split(" "))
+                .map(String::toLowerCase) // for case-insensitive counting
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(wordCount2);
        System.out.println(wordCount1);
 
 
@@ -190,5 +194,8 @@ public class MostlyAskedQuestionIsJava {
 
         System.out.println(s12.hashCode());
         System.out.println(s23.hashCode());
+
+
+
     }
 }

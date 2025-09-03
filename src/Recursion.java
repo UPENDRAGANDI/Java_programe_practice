@@ -107,7 +107,7 @@ public class Recursion {
         }
         int first=nthFeb(n-1);
         int second=nthFeb(n-2);
-        return first+second;
+        return first+second;//1
     }
 
 

@@ -25,6 +25,16 @@ public class MultiThreading {
 
         }
 
+      //es.shutdownNow();
+
+        System.out.println("After shutdown");
+        for (int i = 0; i < 25; i++) {
+            es.submit(counterThread);
+
+        }
+
+
+
 
     }
 
